@@ -95,7 +95,7 @@ At minimum, set `PORT` and `MONGODB_URI`. See [Environment Variables](#environme
 ### Start the server
 
 ```bash
-node bootstrap.js
+npm run start
 ```
 
 The server will log the port it is listening on once ready.
