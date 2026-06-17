@@ -2,7 +2,7 @@ const assert = require('assert');
 const validator = require('@app-core/validator');
 
 function runStringConstraintsTests() {
-  console.log('🧪 Running String Constraints Tests...');
+  console.log('Running String Constraints Tests...');
   let testCount = 0;
   let passedCount = 0;
 
@@ -11,9 +11,9 @@ function runStringConstraintsTests() {
     try {
       testFn();
       passedCount++;
-      console.log(`  ✅ ${name}`);
+      console.log(`  PASS: ${name}`);
     } catch (error) {
-      console.log(`  ❌ ${name}: ${error.message}`);
+      console.log(`  FAIL: ${name}: ${error.message}`);
       throw error;
     }
   }
@@ -473,7 +473,7 @@ function runStringConstraintsTests() {
     }, /is not a valid email/);
   });
 
-  console.log(`✅ String Constraints Tests Completed: ${passedCount}/${testCount} passed`);
+  console.log(`String Constraints Tests Completed: ${passedCount}/${testCount} passed`);
   return { passed: passedCount, total: testCount };
 }
 

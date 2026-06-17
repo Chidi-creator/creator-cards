@@ -2,7 +2,7 @@ const assert = require('assert');
 const validator = require('@app-core/validator');
 
 function runNumericConstraintsTests() {
-  console.log('🧪 Running Numeric Constraints Tests...');
+  console.log('Running Numeric Constraints Tests...');
   let testCount = 0;
   let passedCount = 0;
 
@@ -11,9 +11,9 @@ function runNumericConstraintsTests() {
     try {
       testFn();
       passedCount++;
-      console.log(`  ✅ ${name}`);
+      console.log(`  PASS: ${name}`);
     } catch (error) {
-      console.log(`  ❌ ${name}: ${error.message}`);
+      console.log(`  FAIL: ${name}: ${error.message}`);
       throw error;
     }
   }
@@ -391,7 +391,7 @@ function runNumericConstraintsTests() {
     assert.strictEqual(result2.m, 'FF');
   });
 
-  console.log(`✅ Numeric Constraints Tests Completed: ${passedCount}/${testCount} passed`);
+  console.log(`Numeric Constraints Tests Completed: ${passedCount}/${testCount} passed`);
   return { passed: passedCount, total: testCount };
 }
 

@@ -2,7 +2,7 @@ const assert = require('assert');
 const validator = require('@app-core/validator');
 
 function runComplexNestedTests() {
-  console.log('🧪 Running Complex Nested Structures Tests...');
+  console.log('Running Complex Nested Structures Tests...');
   let testCount = 0;
   let passedCount = 0;
 
@@ -11,9 +11,9 @@ function runComplexNestedTests() {
     try {
       testFn();
       passedCount++;
-      console.log(`  ✅ ${name}`);
+      console.log(`  PASS: ${name}`);
     } catch (error) {
-      console.log(`  ❌ ${name}: ${error.message}`);
+      console.log(`  FAIL: ${name}: ${error.message}`);
       throw error;
     }
   }
@@ -666,7 +666,7 @@ function runComplexNestedTests() {
     }, /length 4 should be at least 8/);
   });
 
-  console.log(`✅ Complex Nested Structures Tests Completed: ${passedCount}/${testCount} passed`);
+  console.log(`Complex Nested Structures Tests Completed: ${passedCount}/${testCount} passed`);
   return { passed: passedCount, total: testCount };
 }
 

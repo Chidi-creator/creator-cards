@@ -2,7 +2,7 @@ const assert = require('assert');
 const validator = require('@app-core/validator');
 
 function runTransformationPipelineTests() {
-  console.log('🧪 Running Transformation Pipeline Tests...');
+  console.log('Running Transformation Pipeline Tests...');
   let testCount = 0;
   let passedCount = 0;
 
@@ -11,9 +11,9 @@ function runTransformationPipelineTests() {
     try {
       testFn();
       passedCount++;
-      console.log(`  ✅ ${name}`);
+      console.log(`  PASS: ${name}`);
     } catch (error) {
-      console.log(`  ❌ ${name}: ${error.message}`);
+      console.log(`  FAIL: ${name}: ${error.message}`);
       throw error;
     }
   }
@@ -422,7 +422,7 @@ function runTransformationPipelineTests() {
     assert.strictEqual(result.items[99].code, 'COD99');
   });
 
-  console.log(`✅ Transformation Pipeline Tests Completed: ${passedCount}/${testCount} passed`);
+  console.log(`Transformation Pipeline Tests Completed: ${passedCount}/${testCount} passed`);
   return { passed: passedCount, total: testCount };
 }
 

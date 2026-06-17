@@ -2,7 +2,7 @@ const assert = require('assert');
 const validator = require('@app-core/validator');
 
 function runBasicTypeTests() {
-  console.log('🧪 Running Basic Type Validation Tests...');
+  console.log('Running Basic Type Validation Tests...');
   let testCount = 0;
   let passedCount = 0;
 
@@ -11,9 +11,9 @@ function runBasicTypeTests() {
     try {
       testFn();
       passedCount++;
-      console.log(`  ✅ ${name}`);
+      console.log(`  PASS: ${name}`);
     } catch (error) {
-      console.log(`  ❌ ${name}: ${error.message}`);
+      console.log(`  FAIL: ${name}: ${error.message}`);
       throw error;
     }
   }
@@ -371,7 +371,7 @@ function runBasicTypeTests() {
     }, /users\[1\]\.age is required!/);
   });
 
-  console.log(`✅ Basic Type Validation Tests Completed: ${passedCount}/${testCount} passed`);
+  console.log(`Basic Type Validation Tests Completed: ${passedCount}/${testCount} passed`);
   return { passed: passedCount, total: testCount };
 }
 

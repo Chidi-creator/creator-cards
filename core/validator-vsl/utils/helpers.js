@@ -9,7 +9,6 @@ function processQualifiers(qualifiers) {
       const splitTokens = qt.split(':');
       const gtKey = splitTokens[0];
       const gtValue = splitTokens.slice(1).join(':');
-      // console.log('🎉🎉🎉🎉', gtKey, gtValue);
       // const [gtKey, gtValue] =
       const isNot = gtKey.startsWith('!');
       let key = gtKey;

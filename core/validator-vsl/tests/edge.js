@@ -2,7 +2,7 @@ const assert = require('assert');
 const validator = require('@app-core/validator');
 
 function runErrorHandlingTests() {
-  console.log('🧪 Running Error Handling and Edge Cases Tests...');
+  console.log('Running Error Handling and Edge Cases Tests...');
   let testCount = 0;
   let passedCount = 0;
 
@@ -11,9 +11,9 @@ function runErrorHandlingTests() {
     try {
       testFn();
       passedCount++;
-      console.log(`  ✅ ${name}`);
+      console.log(`  PASS: ${name}`);
     } catch (error) {
-      console.log(`  ❌ ${name}: ${error.message}`);
+      console.log(`  FAIL: ${name}: ${error.message}`);
       throw error;
     }
   }
@@ -541,21 +541,21 @@ function runErrorHandlingTests() {
       {
         name: '  José María  ',
         description: 'Descripción con acentos y ñ',
-        emoji: '🚀',
+        emoji: '',
       },
       ast
     );
 
     assert.strictEqual(result.name, 'José María');
     assert.strictEqual(result.description, 'Descripción con acentos y ñ');
-    assert.strictEqual(result.emoji, '🚀');
+    assert.strictEqual(result.emoji, '');
 
     // Valid - mixed scripts
     const result2 = validator.validate(
       {
         name: 'John 田中',
         description: 'Mixed English and 日本語 text here',
-        emoji: '🎉',
+        emoji: '',
       },
       ast
     );
@@ -568,7 +568,7 @@ function runErrorHandlingTests() {
     //   {
     //     name: 'Test',
     //     description: 'Valid description here',
-    //     emoji: '👨‍💻', // This might be counted as more than 2 characters
+    //     emoji: '', // This might be counted as more than 2 characters
     //   },
     //   ast
     // );
@@ -626,7 +626,7 @@ function runErrorHandlingTests() {
   });
 
   console.log(
-    `✅ Error Handling and Edge Cases Tests Completed: ${passedCount}/${testCount} passed`
+    `Error Handling and Edge Cases Tests Completed: ${passedCount}/${testCount} passed`
   );
   return { passed: passedCount, total: testCount };
 }

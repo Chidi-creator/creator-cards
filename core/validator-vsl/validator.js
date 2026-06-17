@@ -15,7 +15,6 @@ function validationError(message, prop, errorTree_ = {}) {
 
 function evaluateValueWithType(value, type) {
   let valueIsValidType = false;
-  // console.log(`🐲🐲 ${value} ${type} 🐲🐲`);
   let valueType = typeof value;
   if (Array.isArray(value)) {
     valueType = 'array';
@@ -139,9 +138,7 @@ function validateWithAST(object, tree_, AST, parentChain = '', errors = {}) {
     //   valueDoesNotExist = typeof value === 'undefined';
     // }
     const valueDoesNotExist = typeof value === 'undefined';
-    // console.log('💎💎💎💎💎', isOptional, dataType, value, valueDoesNotExist, `💎💎💎💎💎`);
     if (!isOptional && valueDoesNotExist) {
-      // console.log('💣 Errored out here', isOptional, valueDoesNotExist, astKey);
       // throw new Error(`${parentChain}${astKey} is required!`);
       validationError(`${parentChain}${astKey} is required!`, `${parentChain}${astKey}`, errors);
       return;

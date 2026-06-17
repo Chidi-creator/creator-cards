@@ -2,7 +2,7 @@ const assert = require('assert');
 const validator = require('@app-core/validator');
 
 function runEnumerationTests() {
-  console.log('🧪 Running Enumeration and Possible Values Tests...');
+  console.log('Running Enumeration and Possible Values Tests...');
   let testCount = 0;
   let passedCount = 0;
 
@@ -11,9 +11,9 @@ function runEnumerationTests() {
     try {
       testFn();
       passedCount++;
-      console.log(`  ✅ ${name}`);
+      console.log(`  PASS: ${name}`);
     } catch (error) {
-      console.log(`  ❌ ${name}: ${error.message}`);
+      console.log(`  FAIL: ${name}: ${error.message}`);
       throw error;
     }
   }
@@ -427,7 +427,7 @@ function runEnumerationTests() {
   });
 
   console.log(
-    `✅ Enumeration and Possible Values Tests Completed: ${passedCount}/${testCount} passed`
+    `Enumeration and Possible Values Tests Completed: ${passedCount}/${testCount} passed`
   );
   return { passed: passedCount, total: testCount };
 }
