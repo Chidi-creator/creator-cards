@@ -1,7 +1,7 @@
 const { createHandler } = require('@app-core/server');
 
 module.exports = createHandler({
-  path: '/health',
+  path: '/',
   method: 'get',
   middlewares: [],
   async handler(rc, helpers) {
